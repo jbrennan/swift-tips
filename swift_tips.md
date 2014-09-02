@@ -135,3 +135,17 @@ class MyClass {
 	weak var delegate : MyDelegate? // weak properties must be Optionals
 }
 ```
+
+Enums
+-----
+
+### Naming enum cases
+
+It appears you can't name an enum case to be called `Type`. My guess is this is some kind of existing known member already in Swift objects (I'd love to have a docs link for this!). Come up with a better name.
+
+```
+enum MyEnum {
+    case Type // Will compile but not really usable.
+    case MyType // Just peachy.
+}
+```
