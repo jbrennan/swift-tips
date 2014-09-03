@@ -15,6 +15,16 @@ Using Objective C code in Swift
 
 In order to use an Objective C class or file in Swift you must expose the class in the "Swift Bridging header" file, which is called `Hopscotch-Bridging-Header.h`. Anything you import in there will be exposed to Swift code.
 
+### Casting in for-loops
+
+If you have an `NSArray` and you want to loop over elements in Swift, you can use the following pattern:
+
+```
+for aView in foundationArray as [UIView] {
+    // aView is of type UIView
+}
+```
+
 Using Swift code in Objective C
 -------------------------------
 
