@@ -54,6 +54,16 @@ To make your Objective C class conform to a Swift protocol, you must first make 
 @end
 ```
 
+Pragma mark
+-----------
+
+To do a pragma mark you use the following syntax
+
+```
+// MARK: - Awesome bit of methods
+```
+
+
 NSLocalizedStrings
 ------------------
 
