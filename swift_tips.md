@@ -25,6 +25,19 @@ for aView in foundationArray as [UIView] {
 }
 ```
 
+### Objective C enums in Swift
+
+If you have an Objective C enum like the following:
+
+```
+typedef NS_ENUM(NSUInteger, JBMyEnumType) {
+	JBMyEnumTypeFirst,
+	JBMyEnumTypeSecond
+};
+```
+
+When you use this enum in Swift, the values will lose their two letter prefix (e.g., "JB"), so the first value becomes `JBNyEnumType.MyEnumTypeFirst`.
+
 Using Swift code in Objective C
 -------------------------------
 
