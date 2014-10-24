@@ -1,7 +1,7 @@
 Swift Tips
 ==========
 
-Here are some tips for programming in Swift for Hopscotch, which has lots of Objective C code too. Please update this as you learn new things! These are in no particular order...
+Here are some tips for programming in Swift in Objective C projects. Please update this as you learn new things! These are in no particular order...
 
 Handy Links
 -----------
@@ -37,6 +37,21 @@ typedef NS_ENUM(NSUInteger, JBMyEnumType) {
 ```
 
 When you use this enum in Swift, the values will lose their two letter prefix (e.g., "JB"), so the first value becomes `JBNyEnumType.MyEnumTypeFirst`.
+
+### Gesture Recognizers and Target/Action pairs
+
+In Objective C you can set up a target action pair in different ways, depending on the parameters you want. For example:
+
+```
+UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan)]; // expects a method named `- (void)pan`
+UIPanGestureRecognizer *otherPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panWithGesture:)]; // expects a method named `- (void)panWithGesture:(UIPanGestureRecognizer)gesture`
+```
+
+In Swift, if you want to speficy the action method taking a parameter, you **also** need to include the colon, even though Swift doesn't use colons in method signatures like Objective C:
+
+```
+let pan = UIPanGestureRecognizer(target: self, action: "panWithGesture:") // expects a method named `func panWithGesture(gesture: UIPanGestureRecognizer)`
+```
 
 Using Swift code in Objective C
 -------------------------------
